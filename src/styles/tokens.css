@@ -1,0 +1,47 @@
+:root {
+  color-scheme: dark;
+
+  --ghost-black: #08090a;
+  --ghost-surface: #0e1012;
+  --ghost-elevated: #14171a;
+  --ghost-border: #22262b;
+  --ghost-white: #f2f4f5;
+  --ghost-muted: #92989f;
+  --ghost-dim: #5e646b;
+  --ghost-violet: #9b87f5;
+  --ghost-violet-soft: #b7a9ff;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-technical: "JetBrains Mono", monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-body: 1rem;
+  --text-lead: 1.125rem;
+  --text-section: clamp(2rem, 4vw, 4rem);
+  --text-hero: clamp(4.5rem, 9vw, 9.5rem);
+
+  --leading-tight: 0.92;
+  --leading-body: 1.6;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-section: clamp(8.75rem, 15vw, 13.75rem);
+
+  --content-max: 90rem;
+  --page-gutter: clamp(1.25rem, 5vw, 5rem);
+  --grid-columns: 12;
+
+  --border-subtle: 1px solid var(--ghost-border);
+  --focus-ring: 0 0 0 2px var(--ghost-black), 0 0 0 4px var(--ghost-violet-soft);
+}

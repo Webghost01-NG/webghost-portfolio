@@ -1,0 +1,30 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# Next.js build output
+/.next/
+/out/
+
+# tests and coverage
+/coverage/
+/playwright-report/
+/test-results/
+*.tsbuildinfo
+
+# local environment
+.env
+.env.*
+!.env.example
+
+# editor and OS files
+.DS_Store
+*.pem
+.vscode/
+.idea/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
