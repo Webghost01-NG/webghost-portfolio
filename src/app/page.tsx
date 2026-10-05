@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/home/HeroSection";
 import { IdentityProof } from "@/components/home/IdentityProof";
+import { NivyrShowcase } from "@/components/home/NivyrShowcase";
 import { SiteNavigation } from "@/components/layout/SiteNavigation";
 
 export default function HomePage() {
@@ -9,7 +10,7 @@ export default function HomePage() {
       <main data-page-content id="main-content">
         <HeroSection />
         <IdentityProof />
-        <div aria-hidden="true" className="work-boundary" id="work" />
+        <NivyrShowcase />
       </main>
     </>
   );

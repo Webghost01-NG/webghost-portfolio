@@ -5,6 +5,7 @@ import "@fontsource-variable/jetbrains-mono";
 import "@/styles/global.css";
 import "@/styles/primitives.css";
 import "@/styles/hero.css";
+import "@/styles/nivyr.css";
 
 export const metadata: Metadata = {
   title: {
