@@ -21,3 +21,5 @@ npm run build
 ```
 
 The app uses Next.js App Router, TypeScript, and custom CSS. See [ARCHITECTURE.md](./ARCHITECTURE.md) for the initial technology decision.
+
+Final Vercel deployment is gated on completion of the entire portfolio and the release checks in [ARCHITECTURE.md](./ARCHITECTURE.md). Intermediate checkpoints are not deployed.
