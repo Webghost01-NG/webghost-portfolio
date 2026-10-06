@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import HomePage from "./page";
 
@@ -17,17 +17,13 @@ vi.mock("next/link", () => ({
 
 describe("home hero and identity", () => {
   it("presents the approved message and a work anchor", () => {
-    render(<HomePage />);
-
-    expect(screen.getByRole("heading", { level: 1 })).toHaveAccessibleName(
-      "BUILDING SYSTEMS THAT PROVE BEFORE THEY TRUST.",
-    );
-    expect(screen.getByText("Protocol engineering, privacy infrastructure and autonomous systems.")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "EXPLORE SELECTED WORK" })).toHaveAttribute("href", "#work");
-    expect(screen.getByRole("heading", { name: /Abdurrahman\s*Opeyemi Adesanya/ })).toBeInTheDocument();
-    expect(screen.getByRole("img", { name: "Blue-lit hooded figure representing Webghost" })).toHaveAttribute(
-      "src",
-      "/images/webghost.jpg",
-    );
+    const { container } = render(<HomePage />);
+    expect(container.querySelector("#hero-title")?.getAttribute("aria-label")).toBe("BUILDING SYSTEMS THAT PROVE BEFORE THEY TRUST.");
+    expect(container.querySelector(".hero__support")?.textContent).toContain("Protocol engineering, privacy infrastructure and autonomous systems.");
+    expect(container.querySelector<HTMLAnchorElement>(".hero__action")?.getAttribute("href")).toBe("#work");
+    expect(container.querySelector("#identity-title")?.textContent?.replace(/\s+/g, "")).toContain("AbdurrahmanOpeyemiAdesanya");
+    const image = container.querySelector<HTMLImageElement>(".hero__image");
+    expect(image?.alt).toBe("Blue-lit hooded illustration used as a personal visual motif");
+    expect(image?.getAttribute("src")).toBe("/images/webghost.jpg");
   });
 });

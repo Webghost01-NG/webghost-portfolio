@@ -15,7 +15,7 @@ export function HeroSection() {
           <div aria-hidden="true" className="hero__portrait-wash" />
           <div className="hero__portrait">
             <Image
-              alt="Blue-lit hooded figure representing Webghost"
+              alt="Blue-lit hooded illustration used as a personal visual motif"
               className="hero__image"
               height={400}
               priority

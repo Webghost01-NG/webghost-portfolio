@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { nivyr } from "@/content/nivyr";
 import { NivyrLifecycle } from "./NivyrLifecycle";
@@ -52,6 +53,7 @@ export function NivyrShowcase() {
             A local regtest harness—not a production wallet or proof of an independent merchant integration. End-to-end package verification is limited to Fedora Linux 44 x86_64.
           </p>
           <nav aria-label="Nivyr project links" className="nivyr__links">
+            <Link href="/work/nivyr" aria-label="View Nivyr case study">CASE STUDY <span aria-hidden="true">↗</span></Link>
             <a href={nivyr.links.source} rel="noreferrer" target="_blank">
               SOURCE <span aria-hidden="true">↗</span>
             </a>
