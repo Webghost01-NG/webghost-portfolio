@@ -13,8 +13,16 @@ describe("portfolio content model", () => {
     expect(getProject("sazume")?.caseStudy?.some(({ body }) => body.includes("Arc Testnet"))).toBe(true);
   });
 
+  it("includes current substantial repositories with bounded claims", () => {
+    expect(getProject("veylott")?.feature).toBe("selected");
+    expect(getProject("call-your-shot")?.caseStudy?.some(({ body }) => body.includes("Somnia Shannon"))).toBe(true);
+    expect(getProject("proofops")?.limitations).toContain("Not deployed as a hosted service");
+    expect(getProject("botstate")?.feature).toBe("lab");
+    expect(getProject("botstate")?.limitations).toContain("no contract test suite");
+  });
+
   it("only generates case-study routes for projects with evidence-led case content", () => {
-    expect(caseStudyProjects.map(({ slug }) => slug)).toEqual(expect.arrayContaining(["nivyr", "veyrin", "hivekernel", "sazume"]));
+    expect(caseStudyProjects.map(({ slug }) => slug)).toEqual(expect.arrayContaining(["nivyr", "veyrin", "hivekernel", "sazume", "veylott", "call-your-shot", "proofops"]));
     expect(caseStudyProjects.every(({ caseStudy }) => Boolean(caseStudy?.length))).toBe(true);
   });
 
