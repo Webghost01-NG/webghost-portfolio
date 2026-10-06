@@ -54,7 +54,7 @@ export function SazumeShowcase() {
 }
 
 export function SelectedSystems() {
-  const order = ["reserverail", "resyvr", "relaypay", "kavling-ai", "kumivyr", "kwala-mcp"];
+  const order = ["reserverail", "veylott", "resyvr", "call-your-shot", "relaypay", "proofops", "promiseguard", "kavling-ai", "kumivyr", "kwala-mcp"];
   const items: Project[] = order.flatMap((slug) => { const project = selectedProjects.find((item) => item.slug === slug); return project ? [project] : []; });
   return <section aria-labelledby="selected-title" className="selected section-space" id="selected-systems"><Container>
     <div className="section-heading"><span className="technical-label">05 / COOPERATIVE SYSTEMS</span><h2 id="selected-title">SELECTED<br /><span>SYSTEMS.</span></h2><p>Different teams, different trust boundaries. Roles and project limits are stated alongside the work.</p></div>

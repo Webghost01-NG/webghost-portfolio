@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-const routes = ["/", "/work", "/work/nivyr", "/work/veyrin", "/work/hivekernel", "/work/sazume", "/work/reserverail", "/work/resyvr", "/work/relaypay", "/work/kavling-ai", "/work/kumivyr", "/work/promiseguard", "/about", "/writing", "/contact"];
+const routes = ["/", "/work", "/work/nivyr", "/work/veyrin", "/work/hivekernel", "/work/sazume", "/work/reserverail", "/work/resyvr", "/work/relaypay", "/work/kavling-ai", "/work/kumivyr", "/work/promiseguard", "/work/veylott", "/work/call-your-shot", "/work/proofops", "/about", "/writing", "/contact"];
 
 test("home leads from selected work into a real Nivyr case study", async ({ page }) => {
   await page.goto("/");
