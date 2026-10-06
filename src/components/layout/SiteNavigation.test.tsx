@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { SiteNavigation } from "./SiteNavigation";
 
 vi.mock("next/link", () => ({
-  default: ({ children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => <a {...props}>{children}</a>,
+  default: ({ children, href, onClick, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => <a {...props} href={href} onClick={(event) => { event.preventDefault(); onClick?.(event); }}>{children}</a>,
 }));
 
 describe("SiteNavigation", () => {
@@ -25,7 +25,9 @@ describe("SiteNavigation", () => {
       "href",
       "https://github.com/Webghost01-NG",
     );
-    expect(screen.getByRole("navigation", { name: "Main navigation" }).querySelector('a[href="https://medium.com/@webghost1702"]')).toBeInTheDocument();
+    expect(screen.getByRole("navigation", { name: "Main navigation" }).querySelector('a[href="/work"]')).toBeInTheDocument();
+    expect(screen.getByRole("navigation", { name: "Main navigation" }).querySelector('a[href="/about"]')).toBeInTheDocument();
+    expect(screen.getByRole("navigation", { name: "Main navigation" }).querySelector('a[href="/writing"]')).toBeInTheDocument();
   });
 
   it("opens an accessible full-screen menu, traps focus and closes on Escape", async () => {
@@ -53,7 +55,7 @@ describe("SiteNavigation", () => {
     expect(document.querySelector("[data-page-content]")).toHaveProperty("inert", false);
 
     fireEvent.click(trigger);
-    fireEvent.click(screen.getByRole("dialog").querySelector('a[href="#about"]')!);
+    fireEvent.click(screen.getByRole("dialog").querySelector('a[href="/about"]')!);
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     expect(document.querySelector("[data-page-content]")).toHaveProperty("inert", false);
   });

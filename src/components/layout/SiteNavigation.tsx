@@ -5,9 +5,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { WGMark } from "@/components/identity/WGMark";
 
 const navigation = [
-  { number: "01", label: "WORK", href: "#work" },
-  { number: "02", label: "ABOUT", href: "#about" },
-  { number: "03", label: "WRITING", href: "https://medium.com/@webghost1702", external: true },
+  { number: "01", label: "WORK", href: "/work" },
+  { number: "02", label: "ABOUT", href: "/about" },
+  { number: "03", label: "WRITING", href: "/writing" },
 ];
 
 export function SiteNavigation() {
@@ -74,9 +74,9 @@ export function SiteNavigation() {
         </Link>
 
         <nav aria-label="Main navigation" className="desktop-nav">
-          <Link href="#work">WORK</Link>
-          <Link href="#about">ABOUT</Link>
-          <a href="https://medium.com/@webghost1702" rel="noreferrer" target="_blank">WRITING</a>
+          <Link href="/work">WORK</Link>
+          <Link href="/about">ABOUT</Link>
+          <Link href="/writing">WRITING</Link>
         </nav>
 
         <a className="site-github" href="https://github.com/Webghost01-NG" rel="noreferrer" target="_blank">
@@ -121,15 +121,9 @@ export function SiteNavigation() {
         <h2 className="mobile-menu__heading technical-label" id="mobile-menu-title">NAVIGATE / WEBGHOST</h2>
         <div className="mobile-menu__links">
           {navigation.map((item) => (
-            item.external ? (
-              <a href={item.href} key={item.number} onClick={closeMenu} rel="noreferrer" target="_blank">
-                <span>{item.number}</span>{item.label}<b aria-hidden="true">↗</b>
-              </a>
-            ) : (
-              <Link href={item.href} key={item.number} onClick={closeMenu}>
-                <span>{item.number}</span>{item.label}<b aria-hidden="true">↗</b>
-              </Link>
-            )
+            <Link href={item.href} key={item.number} onClick={closeMenu}>
+              <span>{item.number}</span>{item.label}<b aria-hidden="true">↗</b>
+            </Link>
           ))}
           <a href="https://github.com/Webghost01-NG" onClick={closeMenu} rel="noreferrer" target="_blank">
             <span>04</span>GITHUB<b aria-hidden="true">↗</b>
